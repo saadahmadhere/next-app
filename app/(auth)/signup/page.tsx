@@ -1,6 +1,6 @@
 'use client';
 
-import axios from 'axios';
+import solve from '@/app/actions/user';
 import { ChangeEventHandler, useState } from 'react';
 
 export default function Signup() {
@@ -8,11 +8,7 @@ export default function Signup() {
 	const [password, setPassword] = useState('');
 
 	const handleSignUpClick = async () => {
-		const response = await axios.post('http://localhost:3000/api/user', {
-			username,
-			password,
-		});
-		console.log(response);
+		solve(username, password);
 	};
 
 	return (
